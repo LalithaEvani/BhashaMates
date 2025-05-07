@@ -1,10 +1,11 @@
-# Intent Classification with IB and AFR
+# Enhancing Banking Intent Classification using Information Bottleneck (IB) and Anchored Feature Regularization (AFR)
+This repository is created as part of the INLP project. 
 
 This repository implements intent classification on the [Banking77](https://huggingface.co/datasets/banking77) dataset using large pre-trained models (BERT-large, RoBERTa-large) with optional regularization techniques: **Information Bottleneck (IB)** and **Anchored Feature Regularization (AFR)**.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── main.py                      # Main entry point to run training/evaluation
@@ -27,7 +28,7 @@ This repository implements intent classification on the [Banking77](https://hugg
 
 ---
 
-## 🧪 Running Experiments
+## Running Experiments
 
 ### Logs and Outputs
 
@@ -70,7 +71,7 @@ python main.py --help
 
 ---
 
-## ⚙️ Key CLI Arguments
+## Key CLI Arguments
 
 | Argument            | Description                                                  |
 |---------------------|--------------------------------------------------------------|
@@ -93,7 +94,7 @@ python main.py --help
 | `--seed`            | Random seed                                                  |
 | `--device`          | `cuda` or `cpu`                                              |
 
-## 📤 Outputs per Run
+## Outputs per Run
 
 Each run (under `outputs/`) will include:
 
@@ -106,7 +107,7 @@ When using `run.sh`, top-level logs for each experiment go in the `logs/` direct
 
 ---
 
-## 📦 requirements.txt
+## requirements.txt
 
 ```
 torch
@@ -119,6 +120,12 @@ PyYAML
 ```
 
 ---
+
+## Created By Bhashamates
+- Anuska Maity
+- Devansh Chaudhary
+- Evani Lalitha 
+
 
 
 
