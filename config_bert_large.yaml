@@ -1,0 +1,43 @@
+# Configuration for BERT-large-uncased with IB and AFR regularization
+
+model:
+  model_type: bert
+  model_name: bert-large-uncased
+
+data:
+  dataset_name: banking77
+  data_dir: null  # Set to your local data path if not using HuggingFace dataset
+  max_length: 128
+  batch_size: 12  # Smaller batch size for large model
+  num_workers: 4
+
+regularizers:
+  # Information Bottleneck
+  use_ib: true
+  ib_lambda: 1e-7
+  
+  # Anchored Feature Regularization
+  use_afr: true
+  afr_lambda: 0.027
+  anchor_type: class  # Use class-level anchors ('global', 'class', 'instance')
+  afr_projection_dim: 768  # Set to hidden size of model or smaller
+
+training:
+  learning_rate: 1e-6  # Lower learning rate for large model
+  epochs: 15
+  warmup_steps: 100
+  weight_decay: 0.05
+  gradient_accumulation_steps: 2  # Accumulate gradients to handle larger model
+  max_grad_norm: 1.0
+  early_stopping_patience: 3
+  scheduler_type: linear
+  evaluation_steps: 0  # Evaluate after each epoch
+
+seed: 42
+output_dir: /scratch/anuska/outputs/bert_large_IB_AFR
+log_level: info
+save_steps: 0  # Save only the best model
+save_total_limit: 3
+device: cuda
+fp16: true  # Use mixed precision training
+
